@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: db
+  user: postgres
+  password: <%= ENV['DB_PASSWORD'] %>
+
+
+development:
+  <<: *default
+  database: nobu_development
+
+
+test:
+  <<: *default
+  database: nobu_test
+ 
+
+production:
+  <<: *default
+  database: nobu_production
+  username: nobu
