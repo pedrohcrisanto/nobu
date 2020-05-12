@@ -1,0 +1,36 @@
+<table class="table table-bordered table-striped table-hover table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Tipo de Transação</th>
+                    <th>Valor</th>
+                    <th>Taxa</th>
+                    <th>Data</th>
+                    <th>Conta</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% @extracts.each do |extract| %>
+                    <tr>
+                        <td>
+                            <%= extract.type_transaction %>
+                        </td>
+                        <td>
+                        R$
+                            <%= extract.value %>
+                        </td>
+                        <td>
+                            R$
+                            <%= extract.tax %>
+                        </td>
+                              <td>
+                            <%= extract.created_at.strftime("%d/%m/%Y %H:%M") %>
+                        </td>
+      <td>
+
+                            <%= User.find(Account.find(extract.account_id).user_id).email %>
+                        </td>
+                    </tr>
+                    <% end %>
+            </tbody>
+        </table>

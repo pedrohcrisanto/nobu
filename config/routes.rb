@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get "/draw" => "home#draw"
   get "/transfer" => "home#transfer"
   get "/change_status" => "home#change_status"
+  get "/extract" => "home#extract"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
