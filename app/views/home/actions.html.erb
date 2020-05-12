@@ -24,3 +24,8 @@
   <%= submit_tag("Search") %>
 <% end %>
 
+<%= form_tag(change_status_path, :method => "get") do %>
+
+<%= select_tag(:status, raw('<option value="Ativa">Ativa</option><option value="Desativa">Desativa</option>')) %>
+  <%= submit_tag("Mudar Status") %>
+<% end %>
