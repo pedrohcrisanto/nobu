@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Nobu</title>
+      <title>Nobenk</title>
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
       <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
@@ -11,17 +11,16 @@
    <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
          <a class="navbar-brand" href="/">
-         Nobu
+         Nobenk
          </a>
-         
          <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                <li class="nav-item">
-        <a class="nav-link" href="/actions">Realizar Ações na Conta</a>
-              </li>
-                    <li class="nav-item">
-        <a class="nav-link" href="/extract">Extrato da Conta</a>
-              </li>
+                  <a class="nav-link" href="/actions">Realizar Ações na Conta</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="/extract">Extrato da Conta</a>
+               </li>
             </ul>
             <span class="navbar-right">
             <% if user_signed_in? %>
@@ -35,15 +34,18 @@
       </nav>
    </header>
    <body>
-   <div class="container">
-      <%= yield %>
+   <% flash.each do |type, msg| %>
+  <div class="text-center">
+    <%= msg %>
+  </div>
+<% end %>
+      <div class="container">
+         <%= yield %>
       </div>
    </body>
    <footer class="page-footer font-small footer">
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© Nobu
-         <br><a class="link-footer">Pedro Crisanto</a>
+      <div class="text-center py-3">© Nobenk
+         <br><p>Pedro Crisanto</p>
       </div>
-      <!-- Copyright -->
    </footer>
 </html>
