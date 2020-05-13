@@ -1,5 +1,11 @@
 <div class="container text-center">
-<h1>Bem vindo!</h1>
-<h2>Status da Conta:<br><%= @account_status %></h2>
-<h3>Saldo em conta <br> R$<%= @account_balance%></h3> 
+   <ul class="list-group">
+      <h2>Bem-vindo!</h2>
+      <li class="list-group-item">
+         <h3>Status da Conta:<br><%= @account_status %></h3>
+      </li>
+      <li class="list-group-item">
+         <h3>Saldo em conta <br> R$ <%= @account_balance%></h3>
+      </li>
+   </ul>
 </div>

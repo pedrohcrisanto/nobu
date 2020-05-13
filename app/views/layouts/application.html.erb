@@ -34,18 +34,20 @@
       </nav>
    </header>
    <body>
-   <% flash.each do |type, msg| %>
-  <div class="text-center">
-    <%= msg %>
-  </div>
-<% end %>
+      <% flash.each do |type, msg| %>
+      <div class="text-center alert alert-secondary">
+         <%= msg %>
+      </div>
+      <% end %>
       <div class="container">
          <%= yield %>
       </div>
    </body>
    <footer class="page-footer font-small footer">
-      <div class="text-center py-3">© Nobenk
-         <br><p>Pedro Crisanto</p>
+      <div class="text-center py-3">
+         © Nobenk
+         <br>
+         <p>Pedro Crisanto</p>
       </div>
    </footer>
 </html>

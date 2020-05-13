@@ -1,31 +1,41 @@
-<div class="container">
-<h2>Depositar</h2>
-<%= form_tag(deposit_path) do %>
-<%= text_field_tag(:value) %>
-<%= submit_tag("Depositar") %>
-<% end %>
-</div>
-
-<div class="container">
-<h2>Sacar</h2>
-<%= form_tag(draw_path) do %>
-<%= text_field_tag(:value) %>
-<%= submit_tag("Sacar") %>
-<% end %>
-</div>
-<div class="container">
-<h2>Transferir</h2>
-<%= form_tag(transfer_path) do %>
-<%= label_tag(:value, "Conta Destino:") %>
-<%= collection_select(:user, :user_id, User.all, :id, :email) %>
-<%= text_field_tag(:value) %>
-<%= submit_tag("Transferir") %>
-<% end %>
-</div>
-<div class="container">
-<h2>Mudar Status da Conta</h2>
-<%= form_tag(change_status_path) do %>
-<%= select_tag(:status, raw('<option value="Ativa">Ativa</option><option value="Desativa">Desativa</option>')) %>
-<%= submit_tag("Mudar Status") %>
-<% end %>
+<div class="container text-center">
+   <div class="container margin-div">
+      <div class="form-group">
+         <h2>DEPOSITAR</h2>
+         <%= form_tag(deposit_path) do %>
+         <%= text_field_tag(:value) %>
+         <%= submit_tag "Depositar", class:'btn btn-success' %>
+         <% end %>
+      </div>
+   </div>
+   <div class="container margin-div">
+      <div class="form-group">
+         <h2>SACAR</h2>
+         <%= form_tag(draw_path) do %>
+         <%= text_field_tag(:value) %>
+         <%= submit_tag "Sacar", class: 'btn btn-danger' %>
+         <% end %>
+      </div>
+   </div>
+   <div class="container margin-div">
+      <div class="form-group">
+         <h2>TRANSFERIR</h2>
+         <%= form_tag(transfer_path) do %>
+         <%= label_tag(:value, "Conta Destino:") %>
+         <%= collection_select(:user, :user_id, User.where.not(id: current_user.id), :id, :email) %>
+         <br>
+         <%= text_field_tag(:value) %>
+         <%= submit_tag "Transferir", class: 'btn btn-primary' %>
+         <% end %>
+      </div>
+   </div>
+   <div class="container margin-div">
+      <div class="form-group">
+         <h2>MUDAR STATUS DA CONTA</h2>
+         <%= form_tag(change_status_path) do %>
+         <%= select_tag(:status, raw('<option value="Ativa">Ativa</option><option value="Desativa">Desativa</option>')) %>
+         <%= submit_tag "Mudar Status", class: 'btn btn-secondary' %>
+         <% end %>
+      </div>
+   </div>
 </div>
