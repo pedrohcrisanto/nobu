@@ -1,24 +1,35 @@
-# README
+# Nobe Test - Implementação
+## Configuração
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Clone o projeto
 
-Things you may want to cover:
+```sh
+$ git clone https://github.com/pedrohcrisanto/nobu.git
+```
 
-* Ruby version
+Instale as dependências
+```sh
+$ cd /nobu/
+$ sudo docker-compose run --rm app bundle install
+```
 
-* System dependencies
+Crie o banco, migre as tabelas e logo após popule o banco de dados
+```sh
+$ sudo docker-compose run --rm app bundle exec rails db:create db:migrate 
+```
 
-* Configuration
+Rode a aplicação
+```sh
+$ sudo docker-compose up
+```
 
-* Database creation
+Abra o seu navegador(de preferência Chrome ou Firefox) e navegue para `localhost:3000`
 
-* Database initialization
+Para realizar Testes
+```sh
+$ sudo docker-compose run --rm app bundle exec rspec
+```
+## Deploy no Heroku
 
-* How to run the test suite
+https://nobenk.herokuapp.com/
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
