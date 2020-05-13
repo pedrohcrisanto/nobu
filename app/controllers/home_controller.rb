@@ -17,7 +17,7 @@ class HomeController < ApplicationController
 		end
 		redirect_to root_path
 	end
-		def deposit
+	def deposit
 		if Account.find_by(user_id: current_user.id).status == "Ativa"
 			if params[:value].to_f > 0
 				@account_balance = Account.find_by(user_id: current_user.id).balance
