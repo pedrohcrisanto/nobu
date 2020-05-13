@@ -13,7 +13,7 @@ $ cd /nobu/
 $ sudo docker-compose run --rm app bundle install
 ```
 
-Crie o banco, migre as tabelas e logo após popule o banco de dados
+Crie o banco e migre as tabelas
 ```sh
 $ sudo docker-compose run --rm app bundle exec rails db:create db:migrate 
 ```
